@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Georges_Bourque_p3_cot5930_006</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='project3.css') }}">
+</head>
+<body class="project3">
+
+    <table class="voice_requests" style="width:30%">
+        <tr>
+            <td style="width:50%">
+                <div  class="request_instructions">
+                    <h2>Record and Upload Audio</h2>
+
+                    <button id="record">Record</button>
+                    <button id="stop">Stop</button>
+                    <span id="timer">00:00</span>
+                    <audio id="audio"></audio>
+                    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="audio_data" id="audioData">
+                    </form>
+                    <script src="script.js"></script>
+                    <hl></hl>
+                    <h2>Recorded Files</h2>
+                </div>
+                <ul class="container_styling">
+                    {% for upload_file in upload_files %}
+                    <li class="audio_items"> 
+                        <audio controls>
+                            <source src="{{ url_for('uploaded_file', filename=upload_file) }}">
+                            Your browser does not support the audio element.
+                        </audio><br>
+                        {{upload_file}}
+                        <a href="uploads/{{upload_file}}.txt">{{upload_file}}.txt</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <table class="responses">
+        <tr>
+            <td>
+                <div class="padding_instructions">
+
+                </div>
+                <ul class="container_styling">
+                    {% for ai_response in response_files %}
+                    <li class="text_items">
+                        {{ai_response}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

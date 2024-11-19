@@ -1,0 +1,55 @@
+.project3
+{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+}
+
+.request_instructions
+{
+    background-color: chartreuse;
+    height: 136px;
+}
+
+.padding_instructions
+{
+    background-color: chartreuse;
+    height: 136px;
+    margin-top: 20px;
+}
+
+.voice_requests
+{
+    background-color: bisque;
+}
+
+.responses
+{
+    background-color: brown;
+    width: 70%;
+    
+}
+
+.audio_items
+{
+    background-color: blue;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text_items
+{
+    background-color: red;
+    height: 120px;
+    width: 96%;
+}
+
+.container_styling
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
